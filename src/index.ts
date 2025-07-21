@@ -4,7 +4,7 @@ const app:Application = express();  // No spaces around the `:` and extra spacin
 const port =8080;  // No spaces around `=`
 
 app.get("/",(req:Request,res:Response)=>{  // Missing spaces after commas and around `=>`
-  res.send("Hello my World!");  // No space after the `=` sign
+  res.send("Helo my World!");  // No space after the `=` sign
 });
 
 app.listen(port,()=>{  // No spaces after `,` and missing space around arrow function
