@@ -10,7 +10,7 @@
     "lint:fix": "eslint . --fix && prettier --write .",
     "prepare": "lint-staged"
   },
-   "lint-staged": {
+  "lint-staged": {
     "*.ts": "eslint --cache --fix",
     "*.js": "eslint --cache --fix",
     "*.{ts,js,css,md}": "prettier --write"
@@ -29,7 +29,9 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "@prisma/client": "^6.12.0",
     "@types/express": "^5.0.3",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "prisma": "^6.12.0"
   }
 }
