@@ -84,6 +84,7 @@ model TvShow {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
-  wathedEpisodes Int[]
+  tvShowStates String
+  episodeStates Json?
   tvShowRating Int?
 }
