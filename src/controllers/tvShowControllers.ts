@@ -51,3 +51,21 @@ export const createTvShow = async (
     next(error);
   }
 };
+
+export const getAllTvShows = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const tvShows = await prisma.tvShow.findMany({
+      where: {
+        userId: req.user.id,
+      },
+    });
+
+    res.json(tvShows);
+  } catch (error) {
+    next(error);
+  }
+};
