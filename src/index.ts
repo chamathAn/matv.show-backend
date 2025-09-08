@@ -3,6 +3,7 @@ import { toNodeHandler } from "better-auth/node";
 import { auth } from "./utils/auth";
 import cors from "cors";
 import tvShowRouter from "./routes/tvShowsRoutes";
+import movieRouter from "./routes/moviesRoutes";
 const app: Application = express();
 const port = 3000;
 app.use(
@@ -18,6 +19,9 @@ app.use(express.json());
 
 // tv shows routes
 app.use("/api/v1/tv-shows", tvShowRouter);
+
+// movie routes
+app.use("/api/v1/movies", movieRouter);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Hlo my World!");

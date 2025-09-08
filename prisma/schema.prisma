@@ -26,6 +26,7 @@ model User {
   sessions      Session[]
   accounts      Account[]
   tvShows TvShow[]
+  movies Movies[]
 
   @@unique([email])
   @@map("user")
@@ -41,7 +42,7 @@ model Session {
   userAgent String?
   userId    String
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-
+  
   @@unique([token])
   @@map("session")
 }
@@ -87,4 +88,15 @@ model TvShow {
   tvShowStates String
   episodeStates Json?
   tvShowRating Int?
+}
+
+model Movies {
+  id   Int    @id @default(autoincrement())
+  movieId String
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  movieStates String
+  movieRating Int?
 }
