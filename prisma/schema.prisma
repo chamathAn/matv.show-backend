@@ -27,6 +27,7 @@ model User {
   accounts      Account[]
   tvShows TvShow[]
   movies Movies[]
+animes Animes[]
 
   @@unique([email])
   @@map("user")
@@ -99,4 +100,16 @@ model Movies {
   updatedAt  DateTime @updatedAt
   movieStates String
   movieRating Int?
+}
+
+model Animes {
+  id   Int    @id @default(autoincrement())
+  animeId String
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  animeStates String
+  episodeStates Json?
+  animeRating Int?
 }
