@@ -86,7 +86,7 @@ model TvShow {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
-  tvShowStates String
+  tvShowStates String?
   episodeStates Json?
   tvShowRating Int?
 }
@@ -98,7 +98,7 @@ model Movies {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
-  movieStates String
+  movieStates String?
   movieRating Int?
 }
 
@@ -109,7 +109,7 @@ model Animes {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
-  animeStates String
+  animeStates String?
   episodeStates Json?
   animeRating Int?
 }
