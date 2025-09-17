@@ -9,7 +9,7 @@ const app: Application = express();
 const port = 3000;
 app.use(
   cors({
-    origin: process.env.FRONTEND_WEB_URL as string,
+    origin: "https://matv-show-web-c6wb.vercel.app",
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
@@ -31,6 +31,6 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Hlo my World!");
 });
 
-app.listen(port, () => {
+app.listen(Number(process.env.PORT) || port, () => {
   console.log(`Listening on port ${port}...`);
 });
