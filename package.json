@@ -6,9 +6,7 @@
   "scripts": {
     "start": "bun run src/index.ts",
     "dev": "bun --watch run src/index.ts",
-    "lint": "eslint .",
-    // "lint:fix": "eslint . --fix && prettier --write .",
-    // "prepare": "lint-staged"
+    "lint": "eslint ."
   },
   "lint-staged": {
     "*.ts": "eslint --cache --fix",
