@@ -9,7 +9,7 @@ const app: Application = express();
 const port = 3000;
 app.use(
   cors({
-    origin: "https://matv-show-web-c6wb.vercel.app",
+    origin: process.env.FRONTEND_WEB_URL,
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
