@@ -31,6 +31,6 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Hlo my World!");
 });
 
-app.listen(port, () => {
+app.listen(Number(process.env.PORT) || port, () => {
   console.log(`Listening on port ${port}...`);
 });
