@@ -8,3 +8,6 @@
 ## Work with EsLint, Prettier, Lint-stage & Husky
 
 [connect EsLint, Prettier, Lint-stage & Husky to bun run time](https://medium.com/@dharminnagar/setting-up-eslint-prettier-husky-in-a-bun-typescript-project-063fb5076d12)
+
+    // "lint:fix": "eslint . --fix && prettier --write .",
+    // "prepare": "lint-staged"
